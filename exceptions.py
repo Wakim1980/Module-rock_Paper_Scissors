@@ -1,0 +1,3 @@
+class EnemyDown(Exception):
+    pass
+
