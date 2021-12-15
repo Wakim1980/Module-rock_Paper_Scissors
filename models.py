@@ -28,19 +28,19 @@ class Player:
 
 
     def fight_attack(self):
-        if player_select() == selectAttack():
+        if self.player_select() == enemy1.selectAttack():
             win = 0
-        if player_select() == 1 and selectAttack() == 2:
+        if self.player_select() == 1 and enemy1.selectAttack() == 2:
             win = 0
-        if player_select() == 1 and selectAttack() == 3:
+        if self.player_select() == 1 and enemy1.selectAttack() == 3:
             win = 1
-        if player_select() == 2 and selectAttack() == 1:
+        if self.player_select() == 2 and enemy1.selectAttack() == 1:
             win = 1
-        if player_select() == 2 and selectAttack() == 3:
+        if self.player_select() == 2 and enemy1.selectAttack() == 3:
             win = 0
-        if player_select() == 3 and selectAttack() == 1:
+        if self.player_select() == 3 and enemy1.selectAttack() == 1:
             win = 0
-        if player_select() == 3 and eselectAttack() == 2:
+        if self.player_select() == 3 and enemy1.selectAttack() == 2:
             win = 1
         if win == 0:
             return 0
@@ -48,19 +48,19 @@ class Player:
             return -1
 
     def fight_defens(self):
-        if player_select() == selectAttack():
+        if self.player_select() == enemy1.selectAttack():
             win = 0
-        if player_select() == 1 and selectAttack() == 2:
+        if self.player_select() == 1 and senemy1.selectAttack() == 2:
             win = 2
-        if player_select() == 1 and selectAttack() == 3:
+        if self.player_select() == 1 and senemy1.selectAttack() == 3:
             win = 0
-        if player_select() == 2 and selectAttack() == 1:
+        if self.player_select() == 2 and enemy1.selectAttack() == 1:
             win = 0
-        if player_select() == 2 and selectAttack() == 3:
+        if self.player_select() == 2 and enemy1.selectAttack() == 3:
             win = 2
-        if player_select() == 3 and selectAttack() == 1:
+        if self.player_select() == 3 and senemy1.selectAttack() == 1:
             win = 2
-        if player_select() == 3 and selectAttack() == 2:
+        if self.player_select() == 3 and enemy1.selectAttack() == 2:
             win = 0
         if win == 0:
             return 0

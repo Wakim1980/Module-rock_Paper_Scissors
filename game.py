@@ -11,10 +11,11 @@ from settings import help, level, win_player, win_battle
     #else:
         #print("В другой раз")
 
-models.enemy1.selectAttack()
-models.player1.player_select()
-models.player1.fight_attack()
+#models.enemy1.selectAttack()
+#models.player1.player_select()
+#models.player1.fight_attack()
 
+models.player1.fight_attack()
 
 
 
