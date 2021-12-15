@@ -1,4 +1,4 @@
-from settings import help, level, win_player, win_battle
+from settings import hels, level, win_player, win_battle
 import random
 class Enemy:
     def init(self, level):
@@ -6,7 +6,8 @@ class Enemy:
         self.lives = level
 
     def selectAttack(self):
-        return random.randint(1, 3)
+        enemy_attak = random.randint(1, 3)
+        return enemy_attak
 
     def DecreaseLives(self):
         self.lives = self.lives - 1
@@ -26,45 +27,48 @@ class Player:
         choice_player = int(input("Сделайте выбор — (warrior = [1], mage[2], rogue[3]): "))
         return choice_player
 
+    def DecreaseLives(self):
+        self.lives = self.lives - 1
+        if self.lives <= 0:
+            raise GameOver()
+
 
     def fight_attack(self):
-        if self.player_select() == enemy1.selectAttack():
+        enem_attack = enemy1.selectAttack()
+        pl_attack = self.player_select()
+        if pl_attack == enem_attack:
             win = 0
-        if self.player_select() == 1 and enemy1.selectAttack() == 2:
+        if pl_attack == 1 and enem_attack == 2:
             win = 0
-        if self.player_select() == 1 and enemy1.selectAttack() == 3:
+        if pl_attack == 1 and enem_attack == 3:
             win = 1
-        if self.player_select() == 2 and enemy1.selectAttack() == 1:
+        if pl_attack == 2 and enem_attack == 1:
             win = 1
-        if self.player_select() == 2 and enemy1.selectAttack() == 3:
+        if pl_attack == 2 and enem_attack == 3:
             win = 0
-        if self.player_select() == 3 and enemy1.selectAttack() == 1:
+        if pl_attack == 3 and enem_attack == 1:
             win = 0
-        if self.player_select() == 3 and enemy1.selectAttack() == 2:
+        if pl_attack == 3 and enem_attack == 2:
             win = 1
-        if win == 0:
-            return 0
-        if win == 1:
-            return -1
+        return win
 
     def fight_defens(self):
-        if self.player_select() == enemy1.selectAttack():
+        enem_attack = enemy1.selectAttack()
+        pl_attack = self.player_select()
+        if pl_attack == enem_attack:
             win = 0
-        if self.player_select() == 1 and senemy1.selectAttack() == 2:
+        if pl_attack == 1 and enem_attack == 2:
             win = 2
-        if self.player_select() == 1 and senemy1.selectAttack() == 3:
+        if pl_attack == 1 and enem_attack == 3:
             win = 0
-        if self.player_select() == 2 and enemy1.selectAttack() == 1:
+        if pl_attack == 2 and enem_attack == 1:
             win = 0
-        if self.player_select() == 2 and enemy1.selectAttack() == 3:
+        if pl_attack == 2 and enem_attack == 3:
             win = 2
-        if self.player_select() == 3 and senemy1.selectAttack() == 1:
+        if pl_attack == 3 and enem_attack == 1:
             win = 2
-        if self.player_select() == 3 and enemy1.selectAttack() == 2:
+        if pl_attack == 3 and enem_attack == 2:
             win = 0
-        if win == 0:
-            return 0
-        if win == 2:
-            return -1
+        return win
 
 player1 = Player("Wakim")

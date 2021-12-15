@@ -1,6 +1,6 @@
 import random
 import models
-from settings import help, level, win_player, win_battle
+from settings import hels, level, win_player, win_battle
 #name = input("Добро пожаловать в игру камень-ножницы-бумага, как тебя зовут воин ? ")
 #while name == "":
     #name = input("Вы не указали как вас зову, введите свое имя ")

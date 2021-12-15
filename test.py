@@ -1,4 +1,4 @@
-from settings import help, level, win_player, win_battle
+from settings import hels, level, win_player, win_battle
 import random
 class Enemy:
     def init(self, level):
