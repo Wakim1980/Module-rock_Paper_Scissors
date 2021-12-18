@@ -53,6 +53,7 @@ class Player:
         if result == 0:
             print("It's a draw!")
         if result == 1:
+            enemy1.DecreaseLives()
             print("You attacked successfully!")
         if result == -1:
             print("You missed!")
@@ -67,6 +68,7 @@ class Player:
             print("It's a draw!")
         if result == 1:
             print("You attacked successfully!")
+            player1.DecreaseLives()
         if result == -1:
             print("You missed!")
         return result
