@@ -46,18 +46,29 @@ class Player:
         if self.lives <= 0:
             raise GameOver()
 
-
-
     def attack(self,enemy_obj):
         choice_player = int(input("Сделайте выбор — (warrior = [1], mage[2], rogue[3]): "))
         enemy = enemy_obj.selectAttack()
-        result = Enemy.fight(choice_player,enemy)
+        result = Player.fight(choice_player, enemy)
+        if result == 0:
+            print("It's a draw!")
+        if result == 1:
+            print("You attacked successfully!")
+        if result == -1:
+            print("You missed!")
         return result
+
 
     def defence(self,enemy_obj):
         choice_player = int(input("Сделайте выбор — (warrior = [1], mage[2], rogue[3]): "))
         enemy = enemy_obj.selectAttack()
-        result = Enemy.fight(enemy, choice_player)
+        result = Player.fight(enemy, choice_player)
+        if result == 0:
+            print("It's a draw!")
+        if result == 1:
+            print("You attacked successfully!")
+        if result == -1:
+            print("You missed!")
         return result
 
 
